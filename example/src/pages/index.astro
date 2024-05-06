@@ -1,7 +1,7 @@
 ---
 import ErrorBoundary from '../../../src/ErrorBoundary.astro'
 import ThrowError from '../components/ThrowError.astro'
-import ThrowErrorOnClick from '../components/ThrowErrorOnClick.astro'
+import Wait from '../components/Wait.astro'
 ---
 
 <html lang="en">
@@ -14,14 +14,9 @@ import ThrowErrorOnClick from '../components/ThrowErrorOnClick.astro'
 	</head>
 	<body>
 		<ErrorBoundary>
-			<h1>My Astro App</h1>
-			<ThrowError />
-			<Fragment slot="error">
-				<p>Something went wrong!</p>
-			</Fragment>
-		</ErrorBoundary>
-		<ErrorBoundary>
-			<ThrowErrorOnClick />
+			<Wait ms={2000}>
+				<ThrowError />
+			</Wait>
 			<Fragment slot="error">
 				<p>Something went wrong!</p>
 			</Fragment>

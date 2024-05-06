@@ -1,0 +1,10 @@
+---
+interface Props {
+    ms: number
+}
+
+const { ms } = Astro.props
+
+await new Promise(resolve => setTimeout(resolve, ms))
+---
+<slot />

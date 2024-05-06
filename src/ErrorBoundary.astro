@@ -9,14 +9,5 @@ try {
 } catch {
     html = errorHtml
 }
-
-// generate random id for each instance
-const id = Math.random().toString(36).slice(2)
 ---
-<script define:vars={{ errorHtml, id }}>
-    window.onerror = () => {
-        document.getElementById(`astro-error-boundary-${id}`).innerHTML = errorHtml
-    }
-</script>
-
-<astro-error-boundary id=`astro-error-boundary-${id}` set:html={html} />
+<astro-error-boundary set:html={html} />
