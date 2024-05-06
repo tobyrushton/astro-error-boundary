@@ -1,0 +1,30 @@
+---
+import ErrorBoundary from '../../../src/ErrorBoundary.astro'
+import ThrowError from '../components/ThrowError.astro'
+import ThrowErrorOnClick from '../components/ThrowErrorOnClick.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<ErrorBoundary>
+			<h1>My Astro App</h1>
+			<ThrowError />
+			<Fragment slot="error">
+				<p>Something went wrong!</p>
+			</Fragment>
+		</ErrorBoundary>
+		<ErrorBoundary>
+			<ThrowErrorOnClick />
+			<Fragment slot="error">
+				<p>Something went wrong!</p>
+			</Fragment>
+		</ErrorBoundary>
+	</body>
+</html>

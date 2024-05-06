@@ -1,0 +1,22 @@
+---
+let html
+// ensures that the error slot is always rendered
+const errorHtml = await Astro.slots.render("error")
+
+// attempt to render children
+try {
+    html = await Astro.slots.render("default")
+} catch {
+    html = errorHtml
+}
+
+// generate random id for each instance
+const id = Math.random().toString(36).slice(2)
+---
+<script define:vars={{ errorHtml, id }}>
+    window.onerror = () => {
+        document.getElementById(`astro-error-boundary-${id}`).innerHTML = errorHtml
+    }
+</script>
+
+<astro-error-boundary id=`astro-error-boundary-${id}` set:html={html} />
