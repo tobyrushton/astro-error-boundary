@@ -17,9 +17,9 @@ import Wait from '../components/Wait.astro'
 			<Wait ms={2000}>
 				<ThrowError />
 			</Wait>
-			<Fragment slot="error">
-				<p>Something went wrong!</p>
-			</Fragment>
+			<div slot="error">
+				{(error: Error) => <p>Error: {error.message}</p>}
+			</div>
 		</ErrorBoundary>
 	</body>
 </html>

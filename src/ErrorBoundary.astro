@@ -1,13 +1,11 @@
 ---
 let html
-// ensures that the error slot is always rendered
-const errorHtml = await Astro.slots.render("error")
 
 // attempt to render children
 try {
     html = await Astro.slots.render("default")
-} catch {
-    html = errorHtml
+} catch (err) {
+    html = await Astro.slots.render("error", [err])
 }
 ---
 <astro-error-boundary set:html={html} />
