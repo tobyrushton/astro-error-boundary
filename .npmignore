@@ -1,0 +1,5 @@
+example
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc

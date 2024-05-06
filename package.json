@@ -1,15 +1,19 @@
 {
     "name": "astro-error-boundary",
     "version": "1.0.0",
-    "description": "",
+    "type": "module",
+    "description": "A reusable error boundary component for Astro SSR",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "eslint . --ext .ts,.tsx",
         "format": "prettier --write ."
     },
-    "keywords": [],
-    "author": "",
+    "keywords": ["astro", "ssr", "error-boundary"],
+    "author": "tobyrushton",
     "license": "MIT",
+    "exports": {
+        ".": "./src/index.js"
+    },
     "devDependencies": {
         "astro": "^4.7.1",
         "eslint": "^9.2.0",
