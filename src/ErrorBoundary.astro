@@ -8,4 +8,4 @@ try {
     html = await Astro.slots.render("error", [err])
 }
 ---
-<astro-error-boundary set:html={html} />
+<Fragment set:html={html} />

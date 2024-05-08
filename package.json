@@ -1,6 +1,6 @@
 {
     "name": "astro-error-boundary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "description": "A reusable error boundary component for Astro SSR",
     "scripts": {
